@@ -1,24 +1,33 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] arr = new int[5];
-        for (int i = 0; i < arr.length; i++){
-            System.out.println("Введите число в массив");
-            arr[i] = scanner.nextInt();
+        ArrayList<Integer> numbersArray = new ArrayList<>();
+        LinkedList<Integer> numbersLinked = new LinkedList<>();
+        numbersArray.add(3);
+        numbersArray.add(4);
+        numbersArray.add(5);
+        numbersArray.add(6);
+        numbersArray.add(7);
+        numbersLinked.add(10);
+        numbersLinked.add(11);
+        numbersLinked.add(12);
+        numbersLinked.add(13);
+        numbersLinked.add(14);
+//        for (Integer el : numbersLinked) {
+//            System.out.print(el + ", ");
+//        }
+//        for (Integer el : numbersArray) {
+//            System.out.print(el + ", ");
+//        }
+        for (int i = numbersLinked.size() - 1; i >= 0; i--){
+            System.out.println(numbersLinked.get(i));
         }
-        int min = arr[0];
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] < min){
-                min = arr[i];
-            }
-        }
-        for (int i = 0; i < arr.length; i++){
-            System.out.print("[" + arr[i] + "], ") ;
-        }
-        System.out.println(" Минимальное занчение: " + min);
-
-
     }
 }
+
+
+
