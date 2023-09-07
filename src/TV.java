@@ -1,21 +1,39 @@
 public class TV {
-    public int diagonal;
-    public String matrix;
-    public float price;
-    public int[] size;
+    private int diagonal;
+    private String matrix;
+    private float price;
+    private int[] size;
 
-
-    public void info(int _diagonal, String _matrix, float _price, int[] _size){
-        diagonal = _diagonal;
-        matrix = _matrix;
-        price = _price;
-        size = _size;
+    public TV(){}
+    public TV(int diagonal, String matrix, float price, int[] size){
+        System.out.println("Object create");
+        setValues(diagonal, matrix, price, size);
+        System.out.println(getValues());
     }
-    public String infoString(){
-        String info = "diagonal: " + diagonal + ", " + "matrix: " + matrix + ", " + "price: " + price + "\n";
+
+    public TV(String matrix, float price){
+        System.out.println("Object create");
+        this.matrix = matrix;
+        this.price = price;
+        System.out.println(getValues());
+    }
+
+
+    public void setValues(int diagonal, String matrix, float price, int[] size){
+        this.diagonal = diagonal;
+        this.matrix = matrix;
+        this.price = price;
+        this.size = size;
+    }
+    public String getValues(){
+        String info = "diagonal: " + this.diagonal + ", " + "matrix: " + this.matrix + ", " + "price: " + this.price + "\n";
         String infoSize = "Size: ";
-        for (int i = 0; i < size.length; i++){
-            infoSize += size[i] + ", ";
+        if (this.size != null){
+            for (int i = 0; i < this.size.length; i++){
+                infoSize += this.size[i] + ", ";
+            }
+        }else {
+            infoSize += "Null";
         }
         infoSize += "\n";
         return info + infoSize;
