@@ -1,21 +1,16 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-    int[] leng = new int[]{1, 2, 3, 4, 5, 6};
-    int res = sumArray(leng);
-        System.out.println(res);
+        TV Samsung = new TV();
+        Samsung.info(50, "QLED", 99000,new int[] {148, 80});
+        System.out.println(Samsung.infoString());
+
+        TV Toshiba = new TV();
+        Toshiba.info(50,"LED", 50000, new int[] {120,75});
+        System.out.println(Toshiba.infoString());
     }
-    public static int sumArray(int[] arr){
-        int sum = 0;
-        for(int el : arr){
-            sum+=el;
-        }
-        return sum;
-    }
+
 }
 
 
