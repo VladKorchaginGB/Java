@@ -4,28 +4,26 @@ public class TV {
     private float price;
     private int[] size;
 
-    public TV(){}
+
     public TV(int diagonal, String matrix, float price, int[] size){
-        System.out.println("Object create");
+        System.out.println("\nObject create");
         setValues(diagonal, matrix, price, size);
-        System.out.println(getValues());
     }
 
     public TV(String matrix, float price){
-        System.out.println("Object create");
+        System.out.println("\nObject create");
         this.matrix = matrix;
         this.price = price;
-        System.out.println(getValues());
     }
 
 
-    public void setValues(int diagonal, String matrix, float price, int[] size){
+    protected void setValues(int diagonal, String matrix, float price, int[] size){
         this.diagonal = diagonal;
         this.matrix = matrix;
         this.price = price;
         this.size = size;
     }
-    public String getValues(){
+    protected String getValues(){
         String info = "diagonal: " + this.diagonal + ", " + "matrix: " + this.matrix + ", " + "price: " + this.price + "\n";
         String infoSize = "Size: ";
         if (this.size != null){
@@ -35,7 +33,9 @@ public class TV {
         }else {
             infoSize += "Null";
         }
-        infoSize += "\n";
+
         return info + infoSize;
     }
+
+
 }
